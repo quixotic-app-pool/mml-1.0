@@ -2,16 +2,33 @@ import React, { Component } from 'react';
 import {
     View,
     Text,
-    StyleSheet,
+    StyleSheet
 } from 'react-native';
+import PTRView from 'react-native-pull-to-refresh';
 
 export default class MainPage extends Component {
+
+  constructor(){
+    super();
+    this._refresh = this._refresh.bind(this);
+  }
+  
+  _refresh() {
+   return new Promise((resolve) => {
+     setTimeout(()=>{resolve()}, 1000)
+   });
+ }
+
   render() {
     return (
-      <View>
-        <Text>This is main page.</Text>
-      </View>
-    )
+       <PTRView onRefresh={this._refresh} >
+         <View>
+           <Text>
+             Lets Pull!
+           </Text>
+         </View>
+       </PTRView>
+     )
   }
 }
 
