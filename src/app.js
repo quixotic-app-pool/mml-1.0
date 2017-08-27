@@ -6,6 +6,7 @@ import {
   View
 } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import MmjingScreen from './mmjSection/mmjPage'
 import HomeScreen from './homePage/homePage';
 import ForumScreen from './forumSection/forumPage';
 import CircleScreen from './friendsCircleSection/circlePage';
@@ -30,7 +31,7 @@ export default class DefaultScreen extends Component {
 
 const MainScreenNavigator = TabNavigator({
   首页: { screen: DefaultScreen },
-  妈妈经: { screen: ForumScreen },
+  妈妈经: { screen: MmjingScreen },
   朋友圈: { screen: CircleScreen },
   我的: { screen: MeScreen }
 });

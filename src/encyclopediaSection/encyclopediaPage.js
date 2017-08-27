@@ -5,11 +5,11 @@ import {
     StyleSheet,
 } from 'react-native';
 
-export default class ForumScreen extends React.Component {
+export default class EncyclopediaScreen extends React.Component {
     render(){
       return(
         <View>
-          <Text>forum</Text>
+          <Text>Encyclopedia</Text>
         </View>
       )
     }
