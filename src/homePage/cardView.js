@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Dimensions, TouchableOpacity, Alert } from 'react-native';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 
 
 const { width, height } = Dimensions.get('window');
@@ -10,8 +11,8 @@ export default class CardView extends Component {
     if(cardElevation > 0) {
       return(
         <TouchableOpacity
-                            activeOpacity={0.8}
-                            onPress={()=>Alert.alert('card')}
+          activeOpacity={0.8}
+          onPress={()=>Alert.alert('card')}
                         >
         <View style={[{
           width: width - 10,

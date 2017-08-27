@@ -11,7 +11,7 @@ import BtnGroup from './btnGroup';
 import CardView from './cardView';
 import FitImage from 'react-native-fit-image';
 
-export default class MainPage extends Component {
+export default class HomeScreen extends Component {
 
   constructor(){
     super();
@@ -78,6 +78,8 @@ export default class MainPage extends Component {
      )
   }
 }
+
+
 
 const styles = StyleSheet.create({
 
