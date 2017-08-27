@@ -3,14 +3,26 @@ import {
     View,
     Text,
     StyleSheet,
+    ScrollView
 } from 'react-native';
+import ScrollableTabView, { DefaultTabBar, ScrollableTabBar} from 'react-native-scrollable-tab-view';
+import Icon from 'react-native-vector-icons';
+import DiscoveryScreen from '../discoverySection/discoveryPage';
+import ChatScreen from '../chatSection/chatPage';
+import ContactScreen from '../contactSection/contactPage';
 
 export default class CircleScreen extends Component {
     render(){
-      return(
-        <View>
-          <Text>circle screen</Text>
-        </View>
+      return (
+        <ScrollableTabView
+          style={{marginTop: 20, }}
+          initialPage={2}
+          renderTabBar={() => <ScrollableTabBar />}
+        >
+            <DiscoveryScreen tabLabel="discovery" />
+            <ChatScreen tabLabel="chat" />
+            <ContactScreen tabLabel="contact" />
+        </ScrollableTabView>
       )
     }
 }
@@ -19,11 +31,13 @@ export default class CircleScreen extends Component {
 
 const styles = StyleSheet.create({
 
-  searchContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
-  }
+  container: {
+      marginTop: 30,
+    },
+    icon: {
+      width: 300,
+      height: 300,
+      alignSelf: 'center',
+    },
 
 })

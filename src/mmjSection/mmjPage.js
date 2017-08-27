@@ -18,8 +18,6 @@ export default class MmjingScreen extends React.Component {
         >
             <ForumScreen tabLabel="Forum" />
             <EncyclopediaScreen tabLabel="Encyclopedia" />
-            <ForumScreen tabLabel="Forum" />
-            <EncyclopediaScreen tabLabel="Encyclopedia" />
         </ScrollableTabView>
       )
     }

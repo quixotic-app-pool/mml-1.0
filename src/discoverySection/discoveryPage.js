@@ -5,11 +5,11 @@ import {
     StyleSheet,
 } from 'react-native';
 
-export default class ContactScreen extends React.Component {
+export default class DiscoveryScreen extends Component {
     render(){
       return(
         <View>
-          <Text>contact</Text>
+          <Text>discovery</Text>
         </View>
       )
     }
