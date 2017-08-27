@@ -11,10 +11,11 @@ export default class BtnGroup extends Component {
   render() {
     const { btns } = this.props;
     return (
-       <View>
+       <View style = { styles.container}>
        {btns.map((tab, i) => {
                  return (
                     <Button
+                      style= { styles.btn}
                       title = {tab}
                       onPress = {()=> Alert.alert('press me')}
                     />
@@ -28,11 +29,16 @@ export default class BtnGroup extends Component {
 
 const styles = StyleSheet.create({
 
-  searchContainer: {
+  container: {
+    borderColor: 'blue',
+    borderWidth: 1,
     flex: 1,
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+  },
+  btn: {
+    width: 50,
   }
 
 })
