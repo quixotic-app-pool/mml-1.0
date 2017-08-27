@@ -5,7 +5,8 @@ import {
     StyleSheet
 } from 'react-native';
 import PTRView from 'react-native-pull-to-refresh';
-import CarouselExample from './myCarousel'
+import CarouselExample from './myCarousel';
+import BtnGroup from './btnGroup'
 
 export default class MainPage extends Component {
 
@@ -21,10 +22,12 @@ export default class MainPage extends Component {
  }
 
   render() {
+    const btnsArray = ['btn1', 'btn1', 'btn3']
     return (
        <PTRView onRefresh={this._refresh} >
          <View>
          <CarouselExample />
+         <BtnGroup btns = { btnsArray }/>
            <Text>
              Lets Pull!
            </Text>
