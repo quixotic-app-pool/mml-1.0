@@ -19,7 +19,6 @@ export default class DiscoveryItem extends Component {
             <Text>{ data.user.name }</Text>
             <Text>{ data.textBody }</Text>
             <Image source={require('../dummyData/img/timg.png')} />
-          
           </View>
         </View>
       )
