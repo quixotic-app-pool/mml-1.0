@@ -11,6 +11,7 @@ import HomeScreen from './homePage/homePage';
 import ForumScreen from './forumSection/forumPage';
 import CircleScreen from './friendsCircleSection/circlePage';
 import MeScreen from './me/mePage';
+// import LoginScreen from './signInUpSection/signPage';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 
 export default class DefaultScreen extends Component {
@@ -30,6 +31,7 @@ export default class DefaultScreen extends Component {
 }
 
 const MainScreenNavigator = TabNavigator({
+  // 登录: { screen: LoginScreen },
   首页: { screen: DefaultScreen },
   妈妈经: { screen: MmjingScreen },
   朋友圈: { screen: CircleScreen },
