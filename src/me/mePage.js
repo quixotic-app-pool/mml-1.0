@@ -4,16 +4,57 @@ import {
     Text,
     Image,
     StyleSheet,
+    Animated,
+    ScrollView
 } from 'react-native';
 import SettingsList from 'react-native-settings-list';
+import Interactable from 'react-native-interactable';
 
 export default class MeScreen extends Component {
+
+      constructor() {
+      super();
+      this._deltaY = new Animated.Value(0);
+    }
+
     render(){
       return(
-        <View>
-          <Text>me</Text>
+
+        <ScrollView>
+        <View style={styles.container}>
+
+          <View style={{backgroundColor: 'red', height: 250, alignItems: 'center'}}>
+            <Animated.View style={{
+              transform: [
+                {
+                  translateY: this._deltaY.interpolate({
+                    inputRange: [-150, -150, 0, 0],
+                    outputRange: [-58, -58, 0, 0]
+                  })
+                },
+                {
+                  scale: this._deltaY.interpolate({
+                    inputRange: [-150, -150, 0, 0],
+                    outputRange: [0.35, 0.35, 1, 1]
+                  })
+                }
+              ]
+            }}>
+              <View style={{width: 150, height: 150, backgroundColor: 'blue', borderRadius: 75, marginTop: 50}} />
+            </Animated.View>
+          </View>
+
+          <Interactable.View
+            verticalOnly={true}
+            snapPoints={[{y: 0}, {y: -150}]}
+            boundaries={{top: -150}}
+            animatedValueY={this._deltaY}>
             <SettingView></SettingView>
+          </Interactable.View>
+
         </View>
+        </ScrollView>
+
       )
     }
 }
@@ -65,32 +106,6 @@ render() {
             onPress={() => Alert.alert('Route To Hotspot Page')}
           />
           <SettingsList.Header headerStyle={{marginTop:15}}/>
-          <SettingsList.Item
-            icon={<Image style={styles.imageStyle} source={require('../dummyData/img/airplane.png')}/>}
-            title='Notifications'
-            onPress={() => Alert.alert('Route To Notifications Page')}
-          />
-          <SettingsList.Item
-            icon={<Image style={styles.imageStyle} source={require('../dummyData/img/airplane.png')}/>}
-            title='Control Center'
-            onPress={() => Alert.alert('Route To Control Center Page')}
-          />
-          <SettingsList.Item
-            icon={<Image style={styles.imageStyle} source={require('../dummyData/img/airplane.png')}/>}
-            title='Do Not Disturb'
-            onPress={() => Alert.alert('Route To Do Not Disturb Page')}
-          />
-          <SettingsList.Header headerStyle={{marginTop:15}}/>
-          <SettingsList.Item
-            icon={<Image style={styles.imageStyle} source={require('../dummyData/img/airplane.png')}/>}
-            title='General'
-            onPress={() => Alert.alert('Route To General Page')}
-          />
-          <SettingsList.Item
-            icon={<Image style={styles.imageStyle} source={require('../dummyData/img/airplane.png')}/>}
-            title='Display & Brightness'
-            onPress={() => Alert.alert('Route To Display Page')}
-          />
         </SettingsList>
   );
 }
@@ -101,12 +116,8 @@ render() {
 
 
 const styles = StyleSheet.create({
-
-  searchContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
-  }
-
+  container: {
+  flex: 1,
+  backgroundColor: 'white',
+}
 })
