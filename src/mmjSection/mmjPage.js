@@ -7,18 +7,32 @@ import {
 import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
 import ForumScreen from '../forumSection/forumPage';
 import EncyclopediaScreen from '../encyclopediaSection/encyclopediaPage';
+import SearchContainer from '../searchPage/searchContainer';
+import PTRView from 'react-native-pull-to-refresh';
 
 export default class MmjingScreen extends React.Component {
+
+    _refresh() {
+     return new Promise((resolve) => {
+       setTimeout(()=>{resolve()}, 1000)
+     });
+   }
+
     render(){
         return (
-        <ScrollableTabView
-          style={{marginTop: 20, }}
-          initialPage={2}
-          renderTabBar={() => <ScrollableTabBar />}
-        >
-            <ForumScreen tabLabel="Forum" />
-            <EncyclopediaScreen tabLabel="Encyclopedia" />
-        </ScrollableTabView>
+          <PTRView onRefresh={this._refresh} >
+            <View>
+                <SearchContainer></SearchContainer>
+                <ScrollableTabView
+                  style={{marginTop: 20, }}
+                  initialPage={0}
+                  renderTabBar={() => <ScrollableTabBar />}
+                >
+                    <ForumScreen tabLabel="Forum" />
+                    <EncyclopediaScreen tabLabel="Encyclopedia" />
+                </ScrollableTabView>
+            </View>
+           </PTRView>
       )
     }
 }

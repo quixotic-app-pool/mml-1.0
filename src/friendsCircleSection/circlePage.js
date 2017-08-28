@@ -16,7 +16,7 @@ export default class CircleScreen extends Component {
       return (
         <ScrollableTabView
           style={{marginTop: 20, }}
-          initialPage={2}
+          initialPage={1}
           renderTabBar={() => <ScrollableTabBar />}
         >
             <DiscoveryScreen tabLabel="discovery" />
