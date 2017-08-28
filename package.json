@@ -16,7 +16,8 @@
     "react-native-settings-list": "^1.6.1",
     "react-native-splash-screen": "^3.0.0",
     "react-native-vector-icons": "^4.3.0",
-    "react-navigation": "^1.0.0-beta.11"
+    "react-navigation": "^1.0.0-beta.11",
+    "tcomb-form-native": "^0.6.9"
   },
   "devDependencies": {
     "babel-jest": "20.0.3",
