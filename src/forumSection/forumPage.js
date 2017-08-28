@@ -8,7 +8,7 @@ import {
 export default class ForumScreen extends React.Component {
     render(){
       return(
-        <View>
+        <View style={{height: 600, backgroundColor: 'red'}}>
           <Text>forum</Text>
         </View>
       )

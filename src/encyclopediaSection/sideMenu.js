@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import {
-    View,
-    Text,
-    StyleSheet,
-    TouchableOpacity,
-    Image
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
 } from 'react-native';
-
 import SideMenu from 'react-native-side-menu';
 import Menu from './menu';
 
 const image = require('../dummyData/img/menu.png');
 
-export default class EncyclopediaScreen extends Component {
+
+export default class sideMenu extends Component {
   constructor(props) {
     super(props);
 

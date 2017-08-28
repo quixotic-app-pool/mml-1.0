@@ -26,7 +26,7 @@ export default class DiscoveryScreen extends Component {
           createdAt: new Date(Date.UTC(2016, 7, 30, 17, 20, 0)),
           user: {
             _id: 1,
-            name: '王学姣',
+            name: '小明',
             avatar: '../dummyData/img/user.png',}
         },
         {
@@ -36,7 +36,7 @@ export default class DiscoveryScreen extends Component {
           createdAt: new Date(Date.UTC(2016, 7, 30, 17, 20, 0)),
           user: {
             _id: 2,
-            name: '王学姣',
+            name: '小明',
             avatar: '../dummyData/img/user.png',}
         },
         {
@@ -46,7 +46,7 @@ export default class DiscoveryScreen extends Component {
           createdAt: new Date(Date.UTC(2016, 7, 30, 17, 20, 0)),
           user: {
             _id: 3,
-            name: '王学姣',
+            name: '小明',
             avatar: '../dummyData/img/user.png',}
         }]
 
