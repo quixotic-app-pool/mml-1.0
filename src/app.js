@@ -12,6 +12,7 @@ import ForumScreen from './forumSection/forumPage';
 import CircleScreen from './friendsCircleSection/circlePage';
 import MeScreen from './me/mePage';
 import LoginScreen from './signInUpSection/signPage';
+import ModalScreen from './modal/modalPage';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 
 export default class DefaultScreen extends Component {
@@ -39,6 +40,7 @@ const MainScreenNavigator = TabNavigator({
 
 const mmlApp = StackNavigator({
   // 登录: { screen: LoginScreen },
+  // Modal: { screen: ModalScreen },
   Home: { screen: MainScreenNavigator }
 });
 
